@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.8.10 on linux)" generated="20220506 15:02:15.286" rpa="false" schemaversion="3">
+<suite id="s1" name="Verify search functionality" source="/home/caio-celk/Documentos/RobotFWTutorial/Tests/eBay/Verify_search_functionality.robot">
+<test id="s1-t1" name="Verify basic functionality for ebay" line="15">
+<kw name="Start Test" library="CommonFuncionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url.${site}}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220506 15:02:15.492" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
+<status status="PASS" starttime="20220506 15:02:15.491" endtime="20220506 15:02:18.848"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220506 15:02:18.849" endtime="20220506 15:02:19.087"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220506 15:02:23.088" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220506 15:02:19.088" endtime="20220506 15:02:23.089"/>
+</kw>
+<status status="PASS" starttime="20220506 15:02:15.490" endtime="20220506 15:02:23.090"/>
+</kw>
+<kw name="Checking the robot result" library="HeaderPage">
+<arg>robot</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SearchTextBox}</arg>
+<arg>${search_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220506 15:02:23.093" level="INFO">Typing text 'robot' into text field '//*[@id="gh-ac"]'.</msg>
+<status status="PASS" starttime="20220506 15:02:23.091" endtime="20220506 15:02:23.363"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SearchButton}</arg>
+<arg>[Return]</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220506 15:02:23.364" level="INFO">Sending key(s) ('[Return]',) to id:gh-btn element.</msg>
+<msg timestamp="20220506 15:02:26.778" level="INFO">Sending keys [Return]</msg>
+<status status="PASS" starttime="20220506 15:02:23.363" endtime="20220506 15:02:26.967"/>
+</kw>
+<status status="PASS" starttime="20220506 15:02:23.090" endtime="20220506 15:02:26.967"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<arg>robot</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${search_result}</arg>
+<arg>${search_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220506 15:02:26.999" level="INFO">Current page contains text 'resultados para'.</msg>
+<status status="PASS" starttime="20220506 15:02:26.968" endtime="20220506 15:02:26.999"/>
+</kw>
+<status status="PASS" starttime="20220506 15:02:26.967" endtime="20220506 15:02:27.000"/>
+</kw>
+<kw name="Finish TestCase" library="CommonFuncionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220506 15:02:27.000" endtime="20220506 15:02:27.097"/>
+</kw>
+<status status="PASS" starttime="20220506 15:02:27.000" endtime="20220506 15:02:27.097"/>
+</kw>
+<doc>This test case verifics the basic search</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20220506 15:02:15.489" endtime="20220506 15:02:27.098"/>
+</test>
+<doc>Funcionalidade de pesquisa com POM</doc>
+<status status="PASS" starttime="20220506 15:02:15.288" endtime="20220506 15:02:27.099"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Verify search functionality">Verify search functionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
